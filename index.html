@@ -8,10 +8,17 @@
         input {
             padding: 10px;
             border: 1px solid black;
+            border-radius: 4px;
         }
+        
         button {
             padding: 10px;
             border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -19,10 +26,10 @@
     <input type="text" id="input">
     <button id="copia">Copiar</button>
     <script>
-        const input = document.querySelector("#input").value
-
-        document.querySelector("#copiar").addEventListener("click", () => {
-            navigator.clipboard.writeText(input.value)
+        document.querySelector("#copia").addEventListener("click", () => {
+            navigator.clipboard.writeText(document.querySelector("#input").value);
+            alert("Copiado!")
+            document.querySelector("#input").value = ''
         })
     </script>
 </body>
